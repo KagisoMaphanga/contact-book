@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 - Contact Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <p>Manage your contacts with our simple API powered app.</p>
+
+        </div>
+        
+        <div class="content">
+            <div id="setupPage" class="page active">
+                <div class="api-setup">
+                    <h3>API Setup Required</h3>
+                    <p>Before you use the contact book, please enter your API key below. If you don't have one you can use: </p>
+                    <strong>appacademy@itversity.org</strong>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="apiKeyInput">Enter Your API Key (Enter Address)</label>
+                    <input type="email" id="apiKeyInput" placeholder="your-eamil@example.com">
+
+                </div>
+
+                <button class="btn" onclick="setupApiKey()">Start Using Contact</button>
+
+                <div id="contactsPage" class="page">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+
+                        <h2>Your Contacts</h2>
+                        <div>
+                            <button class="btn btn-secondary" onclick="refreshContacts()">Refresh</button>
+                            <button class="btn btn-success" onclick="showAddContact()">Add Contact</button>
+                        </div>
+
+                    </div>
+                    <div id="contactsList">
+                        <div class="Loading">Loading contacts
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="addContactsPage" class="page">
+                <button class="btn btn-secondary back-btn" onclick="showContacts()">Back To Contacts</button>
+
+                <h2>Add New Contact</h2>
+
+                <form id="addcontactform" onsubmit="addcontact(event)">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstName" Name="firstname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastName" Name="lastname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" Name="mobile" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" Name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avater">Profile Picture (Optional)</label>
+                        <input type="file" id="avater" Name="avater" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Save Contact</button>
+                    <button type="button" class="btn btn-secondary" onclick="showContacts()">Cancel</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
